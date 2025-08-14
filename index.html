@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <title>Battleship Revanced</title>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <meta name="description" content="" />
+
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
+  
+
+</head>
+
+<body>
+  <script src="index.js"></script>
+    <div id="guideContainer">
+      <button id="closeButton" onclick="cycleGuide()">X</button>
+      <h1 style="text-align: center;">Battleship Guide</h1>
+      <h3>Place ships</h3>
+      <p>Ship nodes must be placed in neighboring squares going horizontally or vertically, but not diagonally. Ships may not overlap</p>
+      <h3>Game</h3>
+      <p>During the game, check the placement tab to veiw your ship locations and mark any hit ship by left clicking.</p>
+      <p>On the 2cd screen, you can mark hits and misses for your shots. Left click to indicate a hit and right click to indicate a miss. To remove an incorrect marking, click the square again.</p>
+
+    </div>
+    <div id="GridAndNumWindow">
+      <div id="numberRow">
+        <div><p>1</p></div>
+        <div><p>2</p></div>
+        <div><p>3</p></div>
+        <div><p>4</p></div>
+        <div><p>5</p></div>
+        <div><p>6</p></div>
+        <div><p>7</p></div>
+        <div><p>8</p></div>
+        <div><p>9</p></div>
+        <div><p>10</p></div>
+      </div>
+      <div id="letterRow">
+        <div><p>A</p></div>
+        <div><p>B</p></div>
+        <div><p>C</p></div>
+        <div><p>D</p></div>
+        <div><p>E</p></div>
+        <div><p>F</p></div>
+        <div><p>G</p></div>
+        <div><p>H</p></div>
+        <div><p>I</p></div>
+        <div><p>J</p></div>
+      </div>
+      <div id="buttonsRow">
+
+        <div><button id="showMe1" class="startHidden" onclick="switchVeiw()">Switch</button></div>
+        <div><button id="hideMe1" onclick="nextShip()">Next Ship</button></div>
+        <div><button class="hiddenButton"></button></div>
+        <div><button class="hiddenButton"></button></div>
+        <div><button class="hiddenButton"></button></div>
+        <div><button class="hiddenButton"></button></div>
+        <div><button class="hiddenButton"></button></div>
+        <div><button class="hiddenButton"></button></div>
+        <div><button class="hiddenButton"></button></div>
+        <div><button onclick="cycleGuide()">Guide</button></div>
+
+        
+
+      </div>
+      <div id="toastBar">
+
+        <h3 id="toastItem">An error has occured.</h6>
+
+      </div>
+
+      <div id="GridWindow">
+
+        <div id="HMGridContainer">
+          <div class="HMChild topEdge leftEdge topLeft" id="HM1"><p></p></div>
+          <div class="HMChild topEdge" id="HM2"><p></p></div>
+          <div class="HMChild topEdge" id="HM3"><p></p></div>
+          <div class="HMChild topEdge" id="HM4"><p></p></div>
+          <div class="HMChild topEdge" id="HM5"><p></p></div>
+          <div class="HMChild topEdge" id="HM6"><p></p></div>
+          <div class="HMChild topEdge" id="HM7"><p></p></div>
+          <div class="HMChild topEdge" id="HM8"><p></p></div>
+          <div class="HMChild topEdge" id="HM9"><p></p></div>
+          <div class="HMChild topEdge rightEdge topRight" id="HM10"><p></p></div>
+          <div class="HMChild leftEdge" id="HM11"><p></p></div>
+          <div class="HMChild" id="HM12"><p></p></div>
+          <div class="HMChild" id="HM13"><p></p></div>
+          <div class="HMChild" id="HM14"><p></p></div>
+          <div class="HMChild" id="HM15"><p></p></div>
+          <div class="HMChild" id="HM16"><p></p></div>
+          <div class="HMChild" id="HM17"><p></p></div>
+          <div class="HMChild" id="HM18"><p></p></div>
+          <div class="HMChild" id="HM19"><p></p></div>
+          <div class="HMChild rightEdge" id="HM20"><p></p></div>
+          <div class="HMChild leftEdge" id="HM21"><p></p></div>
+          <div class="HMChild" id="HM22"><p></p></div>
+          <div class="HMChild" id="HM23"><p></p></div>
+          <div class="HMChild" id="HM24"><p></p></div>
+          <div class="HMChild" id="HM25"><p></p></div>
+          <div class="HMChild" id="HM26"><p></p></div>
+          <div class="HMChild" id="HM27"><p></p></div>
+          <div class="HMChild" id="HM28"><p></p></div>
+          <div class="HMChild" id="HM29"><p></p></div>
+          <div class="HMChild rightEdge" id="HM30"><p></p></div>
+          <div class="HMChild leftEdge" id="HM31"><p></p></div>
+          <div class="HMChild" id="HM32"><p></p></div>
+          <div class="HMChild" id="HM33"><p></p></div>
+          <div class="HMChild" id="HM34"><p></p></div>
+          <div class="HMChild" id="HM35"><p></p></div>
+          <div class="HMChild" id="HM36"><p></p></div>
+          <div class="HMChild" id="HM37"><p></p></div>
+          <div class="HMChild" id="HM38"><p></p></div>
+          <div class="HMChild" id="HM39"><p></p></div>
+          <div class="HMChild rightEdge" id="HM40"><p></p></div>
+          <div class="HMChild leftEdge" id="HM41"><p></p></div>
+          <div class="HMChild" id="HM42"><p></p></div>
+          <div class="HMChild" id="HM43"><p></p></div>
+          <div class="HMChild" id="HM44"><p></p></div>
+          <div class="HMChild" id="HM45"><p></p></div>
+          <div class="HMChild" id="HM46"><p></p></div>
+          <div class="HMChild" id="HM47"><p></p></div>
+          <div class="HMChild" id="HM48"><p></p></div>
+          <div class="HMChild" id="HM49"><p></p></div>
+          <div class="HMChild rightEdge" id="HM50"><p></p></div>
+          <div class="HMChild leftEdge" id="HM51"><p></p></div>
+          <div class="HMChild" id="HM52"><p></p></div>
+          <div class="HMChild" id="HM53"><p></p></div>
+          <div class="HMChild" id="HM54"><p></p></div>
+          <div class="HMChild" id="HM55"><p></p></div>
+          <div class="HMChild" id="HM56"><p></p></div>
+          <div class="HMChild" id="HM57"><p></p></div>
+          <div class="HMChild" id="HM58"><p></p></div>
+          <div class="HMChild" id="HM59"><p></p></div>
+          <div class="HMChild rightEdge" id="HM60"><p></p></div>
+          <div class="HMChild leftEdge" id="HM61"><p></p></div>
+          <div class="HMChild" id="HM62"><p></p></div>
+          <div class="HMChild" id="HM63"><p></p></div>
+          <div class="HMChild" id="HM64"><p></p></div>
+          <div class="HMChild" id="HM65"><p></p></div>
+          <div class="HMChild" id="HM66"><p></p></div>
+          <div class="HMChild" id="HM67"><p></p></div>
+          <div class="HMChild" id="HM68"><p></p></div>
+          <div class="HMChild" id="HM69"><p></p></div>
+          <div class="HMChild rightEdge" id="HM70"><p></p></div>
+          <div class="HMChild leftEdge" id="HM71"><p></p></div>
+          <div class="HMChild" id="HM72"><p></p></div>
+          <div class="HMChild" id="HM73"><p></p></div>
+          <div class="HMChild" id="HM74"><p></p></div>
+          <div class="HMChild" id="HM75"><p></p></div>
+          <div class="HMChild" id="HM76"><p></p></div>
+          <div class="HMChild" id="HM77"><p></p></div>
+          <div class="HMChild" id="HM78"><p></p></div>
+          <div class="HMChild" id="HM79"><p></p></div>
+          <div class="HMChild rightEdge" id="HM80"><p></p></div>
+          <div class="HMChild leftEdge" id="HM81"><p></p></div>
+          <div class="HMChild" id="HM82"><p></p></div>
+          <div class="HMChild" id="HM83"><p></p></div>
+          <div class="HMChild" id="HM84"><p></p></div>
+          <div class="HMChild" id="HM85"><p></p></div>
+          <div class="HMChild" id="HM86"><p></p></div>
+          <div class="HMChild" id="HM87"><p></p></div>
+          <div class="HMChild" id="HM88"><p></p></div>
+          <div class="HMChild" id="HM89"><p></p></div>
+          <div class="HMChild rightEdge" id="HM90"><p></p></div>
+          <div class="HMChild leftEdge bottomEdge bottomLeft" id="HM91"><p></p></div>
+          <div class="HMChild bottomEdge" id="HM92"><p></p></div>
+          <div class="HMChild bottomEdge" id="HM93"><p></p></div>
+          <div class="HMChild bottomEdge" id="HM94"><p></p></div>
+          <div class="HMChild bottomEdge" id="HM95"><p></p></div>
+          <div class="HMChild bottomEdge" id="HM96"><p></p></div>
+          <div class="HMChild bottomEdge" id="HM97"><p></p></div>
+          <div class="HMChild bottomEdge" id="HM98"><p></p></div>
+          <div class="HMChild bottomEdge" id="HM99"><p></p></div>
+          <div class="HMChild rightEdge bottomEdge bottomRight" id="HM100"><p></p></div>
+          
+        </div>
+
+        <div id="SPGridContainer">
+          <div class="SPChild topEdge leftEdge topLeft" id="SP1"><div></div></div>
+          <div class="SPChild topEdge" id="SP2"><div></div></div>
+          <div class="SPChild topEdge" id="SP3"><div></div></div>
+          <div class="SPChild topEdge" id="SP4"><div></div></div>
+          <div class="SPChild topEdge" id="SP5"><div></div></div>
+          <div class="SPChild topEdge" id="SP6"><div></div></div>
+          <div class="SPChild topEdge" id="SP7"><div></div></div>
+          <div class="SPChild topEdge" id="SP8"><div></div></div>
+          <div class="SPChild topEdge" id="SP9"><div></div></div>
+          <div class="SPChild topEdge rightEdge topRight" id="SP10"><div></div></div>
+          <div class="SPChild leftEdge" id="SP11"><div></div></div>
+          <div class="SPChild " id="SP12"><div></div></div>
+          <div class="SPChild " id="SP13"><div></div></div>
+          <div class="SPChild " id="SP14"><div></div></div>
+          <div class="SPChild" id="SP15"><div></div></div>
+          <div class="SPChild " id="SP16"><div></div></div>
+          <div class="SPChild " id="SP17"><div></div></div>
+          <div class="SPChild " id="SP18"><div></div></div>
+          <div class="SPChild " id="SP19"><div></div></div>
+          <div class="SPChild rightEdge" id="SP20"><div></div></div>
+          <div class="SPChild leftEdge" id="SP21"><div></div></div>
+          <div class="SPChild " id="SP22"><div></div></div>
+          <div class="SPChild " id="SP23"><div></div></div>
+          <div class="SPChild " id="SP24"><div></div></div>
+          <div class="SPChild " id="SP25"><div></div></div>
+          <div class="SPChild " id="SP26"><div></div></div>
+          <div class="SPChild " id="SP27"><div></div></div>
+          <div class="SPChild " id="SP28"><div></div></div>
+          <div class="SPChild " id="SP29"><div></div></div>
+          <div class="SPChild rightEdge" id="SP30"><div></div></div>
+          <div class="SPChild leftEdge" id="SP31"><div></div></div>
+          <div class="SPChild " id="SP32"><div></div></div>
+          <div class="SPChild " id="SP33"><div></div></div>
+          <div class="SPChild " id="SP34"><div></div></div>
+          <div class="SPChild " id="SP35"><div></div></div>
+          <div class="SPChild " id="SP36"><div></div></div>
+          <div class="SPChild " id="SP37"><div></div></div>
+          <div class="SPChild " id="SP38"><div></div></div>
+          <div class="SPChild " id="SP39"><div></div></div>
+          <div class="SPChild rightEdge" id="SP40"><div></div></div>
+          <div class="SPChild leftEdge" id="SP41"><div></div></div>
+          <div class="SPChild " id="SP42"><div></div></div>
+          <div class="SPChild " id="SP43"><div></div></div>
+          <div class="SPChild " id="SP44"><div></div></div>
+          <div class="SPChild " id="SP45"><div></div></div>
+          <div class="SPChild " id="SP46"><div></div></div>
+          <div class="SPChild " id="SP47"><div></div></div>
+          <div class="SPChild " id="SP48"><div></div></div>
+          <div class="SPChild " id="SP49"><div></div></div>
+          <div class="SPChild rightEdge" id="SP50"><div></div></div>
+          <div class="SPChild leftEdge" id="SP51"><div></div></div>
+          <div class="SPChild " id="SP52"><div></div></div>
+          <div class="SPChild " id="SP53"><div></div></div>
+          <div class="SPChild " id="SP54"><div></div></div>
+          <div class="SPChild " id="SP55"><div></div></div>
+          <div class="SPChild " id="SP56"><div></div></div>
+          <div class="SPChild " id="SP57"><div></div></div>
+          <div class="SPChild " id="SP58"><div></div></div>
+          <div class="SPChild " id="SP59"><div></div></div>
+          <div class="SPChild rightEdge" id="SP60"><div></div></div>
+          <div class="SPChild leftEdge" id="SP61"><div></div></div>
+          <div class="SPChild " id="SP62"><div></div></div>
+          <div class="SPChild " id="SP63"><div></div></div>
+          <div class="SPChild " id="SP64"><div></div></div>
+          <div class="SPChild " id="SP65"><div></div></div>
+          <div class="SPChild " id="SP66"><div></div></div>
+          <div class="SPChild " id="SP67"><div></div></div>
+          <div class="SPChild " id="SP68"><div></div></div>
+          <div class="SPChild " id="SP69"><div></div></div>
+          <div class="SPChild rightEdge" id="SP70"><div></div></div>
+          <div class="SPChild leftEdge" id="SP71"><div></div></div>
+          <div class="SPChild " id="SP72"><div></div></div>
+          <div class="SPChild " id="SP73"><div></div></div>
+          <div class="SPChild " id="SP74"><div></div></div>
+          <div class="SPChild " id="SP75"><div></div></div>
+          <div class="SPChild " id="SP76"><div></div></div>
+          <div class="SPChild " id="SP77"><div></div></div>
+          <div class="SPChild " id="SP78"><div></div></div>
+          <div class="SPChild " id="SP79"><div></div></div>
+          <div class="SPChild rightEdge" id="SP80"><div></div></div>
+          <div class="SPChild leftEdge" id="SP81"><div></div></div>
+          <div class="SPChild " id="SP82"><div></div></div>
+          <div class="SPChild " id="SP83"><div></div></div>
+          <div class="SPChild " id="SP84"><div></div></div>
+          <div class="SPChild " id="SP85"><div></div></div>
+          <div class="SPChild " id="SP86"><div></div></div>
+          <div class="SPChild " id="SP87"><div></div></div>
+          <div class="SPChild " id="SP88"><div></div></div>
+          <div class="SPChild " id="SP89"><div></div></div>
+          <div class="SPChild rightEdge" id="SP90"><div></div></div>
+          <div class="SPChild leftEdge bottomEdge bottomLeft" id="SP91"><div></div></div>
+          <div class="SPChild bottomEdge" id="SP92"><div></div></div>
+          <div class="SPChild bottomEdge" id="SP93"><div></div></div>
+          <div class="SPChild bottomEdge" id="SP94"><div></div></div>
+          <div class="SPChild bottomEdge" id="SP95"><div></div></div>
+          <div class="SPChild bottomEdge" id="SP96"><div></div></div>
+          <div class="SPChild bottomEdge" id="SP97"><div></div></div>
+          <div class="SPChild bottomEdge" id="SP98"><div></div></div>
+          <div class="SPChild bottomEdge" id="SP99"><div></div></div>
+          <div class="SPChild rightEdge bottomEdge bottomRight" id="SP100"><div></div></div>
+        </div>
+        
+      </div>
+
+    </div>
+
+</body>
+
+</html>
